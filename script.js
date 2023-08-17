@@ -29,4 +29,22 @@ form.addEventListener('submit', (e) => {
     } else {
         showSuccess(username)
     }
+
+    if (email.value === '') {
+        showError(email, 'email is requered');
+    } else {
+        showSuccess(email)
+    }
+    
+    if (password.value === '') {
+        showError(password, 'Password is requered');
+    } else {
+        showSuccess(password)
+    }
+
+    if (password2.value === '') {
+        showError(password2, 'Repeat password is requered');
+    } else {
+        showSuccess(password2)
+    }
 })
