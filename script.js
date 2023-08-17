@@ -14,11 +14,17 @@ function showError(input, message) {
     small.innerText = message;
 }
 
+//Show success message
+function showSuccess(input) {
+    const formControl = input.parentElement;
+    formControl.className = 'form-control success';
+}
+
 //Add event listener
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     
-    if (username.value === '' || email.value === '' || password.value === '' || password2.value === '') {
+    if (username.value === '') {
         showError(username, 'Username is requered');
     } else {
         showSuccess(username)
