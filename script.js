@@ -5,6 +5,15 @@ const email = document.querySelector('#email');
 const password = document.querySelector('#password');
 const password2 = document.querySelector('#password-2');
 
+//Show input error message
+function showError(input, message) {
+    const formControl = input.parentElement;
+    formControl.className = 'form-control error';
+
+    const small = formControl.querySelector('small');
+    small.innerText = message;
+}
+
 //Add event listener
 form.addEventListener('submit', (e) => {
     e.preventDefault();
