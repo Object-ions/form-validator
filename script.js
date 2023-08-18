@@ -36,6 +36,17 @@ function chackRequiredField(inputArr) {
     });
 }
 
+//check length of input
+function checlLenght(input, min, max) {
+    if (input.value.length < min) {
+        showError(input, `${getFieldName(input)} must be at least ${min} characters long`);
+    }else if (input.value.length > max) {
+        showError(input, `${getFieldName(input)} must be less than ${max} characters long`);
+    } else {
+    showSuccess(input);
+    }
+}
+
 //Get field name
 function getFieldName(input) {
     return input.id.charAt(0).toUpperCase() + input.id.slice(1);
@@ -46,4 +57,6 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     
    chackRequiredField([username, email, password, password2]);
+   checlLenght(username, 3, 16);
+   checlLenght(password, 6, 25);
 })
